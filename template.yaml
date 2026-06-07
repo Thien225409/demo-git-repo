@@ -35,5 +35,4 @@ spec:
       name: Đăng ký Component vào Catalog
       action: catalog:register
       input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+        catalogInfoUrl: https://github.com/Thien225409/demo-git-repo/blob/master/catalog-info.yaml
