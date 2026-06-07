@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-service
+  description: Đây là một dịch vụ demo để kiểm tra tích hợp Git trong Backstage
+  annotations:
+    # Khai báo đường dẫn gốc của mã nguồn
+    backstage.io/source-location: url:https://github.com/Thien225409/demo-git-repo
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:thien225409
