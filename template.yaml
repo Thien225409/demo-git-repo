@@ -1,0 +1,39 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: expressjs-template
+  title: Create Express.js Service
+  description: Tạo một dự án Express.js mẫu chuẩn hóa
+spec:
+  owner: group:guests
+  type: service
+
+  # 1. Các tham số người dùng nhập từ giao diện (Input parameters)
+  parameters:
+    - title: Cấu hình cơ bản
+      required:
+        - name
+      properties:
+        name:
+          title: Tên dự án
+          type: string
+          description: Tên thư mục và tên package.json
+
+  # 2. Các bước xử lý tự động của Backend (Steps)
+  steps:
+    # Bước A: Tải mã nguồn khung (skeleton) từ một thư mục hoặc từ Git
+    - id: fetch-base
+      name: Tải mã nguồn mẫu
+      action: fetch:template
+      input:
+        url: ./skeleton # Đường dẫn chứa mã nguồn khung của bạn
+        values:
+          projectName: ${{ parameters.name }}
+
+    # Bước B: Đăng ký Component mới này vào danh sách Catalog
+    - id: register
+      name: Đăng ký Component vào Catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
