@@ -30,9 +30,18 @@ spec:
         values:
           projectName: ${{ parameters.name }}
 
+    - id: publish 
+      name: Đẩy mã nguồn lên GitHub
+      action: publish:github
+      input:
+        allowedHosts:
+          - github.com
+        description: Dự án được tạo tự động từ Backstage template
+        repoUrl: ${{ parameters.repoUrl }}
     # Bước B: Đăng ký Component mới này vào danh sách Catalog
     - id: register
       name: Đăng ký Component vào Catalog
       action: catalog:register
       input:
-        catalogInfoUrl: https://github.com/Thien225409/demo-git-repo/blob/master/catalog-info.yaml
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
