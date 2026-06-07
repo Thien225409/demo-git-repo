@@ -13,11 +13,19 @@ spec:
     - title: Cấu hình cơ bản
       required:
         - name
+        - repoUrl
       properties:
         name:
           title: Tên dự án
           type: string
           description: Tên thư mục và tên package.json
+        repoUrl:
+          title: Địa chỉ Repository đích
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
 
   # 2. Các bước xử lý tự động của Backend (Steps)
   steps:
