@@ -42,8 +42,6 @@ spec:
       name: Đẩy mã nguồn lên GitHub
       action: publish:github
       input:
-        allowedHosts:
-          - github.com
         description: Dự án được tạo tự động từ Backstage template
         repoUrl: ${{ parameters.repoUrl }}
     # Bước B: Đăng ký Component mới này vào danh sách Catalog
