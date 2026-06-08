@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.projectName }}
+  description: Dự án được tạo tự động từ template Backstage
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:guest
