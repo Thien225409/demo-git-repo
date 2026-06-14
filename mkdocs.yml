@@ -1,0 +1,7 @@
+site_name: !ENV GITHUB_TOKEN
+repo_url: https://github.com/Thien225409/demo-git-repo
+edit_uri: edit/master/docs
+nav:
+  - Home: index.md
+plugins:
+  - techdocs-core
