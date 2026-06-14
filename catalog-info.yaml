@@ -5,8 +5,8 @@ metadata:
   description: Đây là một dịch vụ demo để kiểm tra tích hợp Git trong Backstage
   annotations:
     # Khai báo đường dẫn gốc của mã nguồn
-    backstage.io/source-location: url:https://github.com/Thien225409/demo-git-repo
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/source-location: url:https://github.com/Thien225409/demo-git-repo/
+    backstage.io/techdocs-ref: url:https://github.com/Thien225409/demo-git-repo/tree/master
 spec:
   type: service
   lifecycle: experimental
